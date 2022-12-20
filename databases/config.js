@@ -13,7 +13,6 @@ const dbConnection = async (parameters) => {
         throw new Error('Error a la hora de inicia la bd ver logs');
     }
 };
-// mongodb+srv://luidasa:R3f0rm4360!@cluster0.oauog.mongodb.net/storedb
 
 module.exports = {
     dbConnection
