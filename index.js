@@ -20,6 +20,7 @@ app.use(cors());
 app.use(express.json());
 
 // Cualquier petición que comience con /api/usuarios va a ser respondido por el require que esta en el archivo
+app.use('/api/auth', require('./routes/auth.routes'));
 app.use('/api/hospitales', require('./routes/hospitales.routes'));
 app.use('/api/medicos', require('./routes/medicos.routes'));
 //app.use('/api/buscar', require('./routes/busquedas.routes'));

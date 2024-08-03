@@ -1,3 +1,4 @@
+const { type } = require("express/lib/response");
 const { Schema, model } = require("mongoose");
 
 const UsuarioSchema = Schema({
@@ -16,14 +17,18 @@ const UsuarioSchema = Schema({
         type: Number,
         required: true,
     },
-    estaActivo: Boolean
+    estaActivo: Boolean,
+    password: {
+        type: String,
+        required: true,
+    }
 }, {collection: 'usuarios'});
 
 
-MedicoSchema.method('toJSON', function()  {
-    const {__v, _id, ...object} = this.toObject();
-    object.uid = _id;
-    return object;
+UsuarioSchema.method("toJSON", function () {
+  const { __v, _id, ...object } = this.toObject();
+  object.uid = _id;
+  return object;
 });
 
 module.exports = model('Usuario', UsuarioSchema);

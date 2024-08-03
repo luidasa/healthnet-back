@@ -1,9 +1,6 @@
 const { Router } = require('express');
-
 const { check } = require('express-validator')
-
 const { validarCampos } = require('../middlewares/validar-campos.middleware')
-
 const { getHospitales, crearHospital, modificarHospital, borrarHospital } = require('../controllers/hospitales.controller');
 const { validarJwt } = require('../middlewares/validar-jwt.middleware');
 
